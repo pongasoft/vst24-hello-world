@@ -93,7 +93,7 @@ void VSTPluginProcessSamplesFloat32(VSTPlugin *vstPlugin, float **inputs, float 
 {
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
 
-  for(int i = 0; i < wrapper->getVSTPlugin()->numInputs; i++)
+  for(int i = 0; i < wrapper->getNumInputs(); i++)
   {
     auto inputSamples = inputs[i];
     auto outputSamples = outputs[i];
@@ -108,7 +108,7 @@ void VSTPluginProcessSamplesFloat64(VSTPlugin *vstPlugin, double **inputs, doubl
 {
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
 
-  for(int i = 0; i < wrapper->getVSTPlugin()->numInputs; i++)
+  for(int i = 0; i < wrapper->getNumInputs(); i++)
   {
     auto inputSamples = inputs[i];
     auto outputSamples = outputs[i];
