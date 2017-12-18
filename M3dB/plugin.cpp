@@ -34,6 +34,9 @@ extern "C" {
  */
 extern VSTPlugin *VSTPluginMain(VSTHostCallback vstHostCallback);
 
+// note this looks like this without the type aliases (and is obviously 100% equivalent)
+// extern AEffect *VSTPluginMain(audioMasterCallback audioMaster);
+
 }
 
 /*
@@ -100,7 +103,7 @@ private:
  */
 void VSTPluginProcessSamplesFloat32(VSTPlugin *vstPlugin, float **inputs, float **outputs, VstInt32 sampleFrames)
 {
-  // we can get retrieve a hold to our C++ class since we stored it in the `object` field (see constructor)
+  // we can get a hold to our C++ class since we stored it in the `object` field (see constructor)
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
 
   // code speaks for itself: for each input (2 when stereo input), iterating over every sample and writing the
@@ -127,7 +130,7 @@ void VSTPluginProcessSamplesFloat32(VSTPlugin *vstPlugin, float **inputs, float 
  */
 void VSTPluginProcessSamplesFloat64(VSTPlugin *vstPlugin, double **inputs, double **outputs, VstInt32 sampleFrames)
 {
-  // we can get retrieve a hold to our C++ class since we stored it in the `object` field (see constructor)
+  // we can get a hold to our C++ class since we stored it in the `object` field (see constructor)
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
 
   // code speaks for itself: for each input (2 when stereo input), iterating over every sample and writing the
@@ -162,7 +165,7 @@ VstIntPtr VSTPluginDispatcher(VSTPlugin *vstPlugin, VstInt32 opCode, VstInt32 in
 
   VstIntPtr v = 0;
 
-  // we can get retrieve a hold to our C++ class since we stored it in the `object` field (see constructor)
+  // we can get a hold to our C++ class since we stored it in the `object` field (see constructor)
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
   // see aeffect.h/AEffectOpcodes and aeffectx.h/AEffectXOpcodes for details on all of them
   switch(opCode)
@@ -202,7 +205,7 @@ VstIntPtr VSTPluginDispatcher(VSTPlugin *vstPlugin, VstInt32 opCode, VstInt32 in
 void VSTPluginSetParameter(VSTPlugin *vstPlugin, VstInt32 index, float parameter)
 {
   printf("called VSTPluginSetParameter(%d, %f)\n", index, parameter);
-  // we can get retrieve a hold to our C++ class since we stored it in the `object` field (see constructor)
+  // we can get a hold to our C++ class since we stored it in the `object` field (see constructor)
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
 }
 
@@ -212,7 +215,7 @@ void VSTPluginSetParameter(VSTPlugin *vstPlugin, VstInt32 index, float parameter
 float VSTPluginGetParameter(VSTPlugin *vstPlugin, VstInt32 index)
 {
   printf("called VSTPluginGetParameter(%d)\n", index);
-  // we can get retrieve a hold to our C++ class since we stored it in the `object` field (see constructor)
+  // we can get a hold to our C++ class since we stored it in the `object` field (see constructor)
   VSTPluginWrapper *wrapper = static_cast<VSTPluginWrapper *>(vstPlugin->object);
   return 0;
 }
@@ -229,7 +232,7 @@ VSTPluginWrapper::VSTPluginWrapper(audioMasterCallback vstHostCallback,
                                    VstInt32 numOutputs) :
   _vstHostCallback(vstHostCallback)
 {
-  // Make sure that the memory is properly intialized
+  // Make sure that the memory is properly initialized
   memset(&_vstPlugin, 0, sizeof(_vstPlugin));
 
   // this field must be set with this constant...
