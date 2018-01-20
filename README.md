@@ -3,19 +3,26 @@ Introduction
 
 This project contains a "Hello World" style application for building a VST 2.4 plugin: the code is heavily commented to explain what is going on. Also check out the VST2.4 section below for more details on VST.
 
-This plugin has no UI nor any way to configure it. It simply lowers the input signal by 3dB. The point is to have the minimum amount of code to have a fully functionning plugin while demonstrating what is going on and best practices (I know the code could be made even smaller without the C++ wrapper class, but the point is to write realistic code that can be used as a starting point for more advanced plugins).
+This plugin has no UI nor any way to configure it. It simply lowers the input signal by 3dB. The point is to have the minimum amount of code to have a fully working plugin while demonstrating what is going on and best practices (I know the code could be made even smaller without the C++ wrapper class, but the point is to write realistic code that can be used as a starting point for more advanced plugins).
 
 Motivations
 ===========
 
 TLDR; Lack of one
 
-Motivations coming soon...
+After building a few [Rack Extensions](https://pongasoft.com/) for Propellerhead's Reason DAW, I wanted to build a VST plugin which I could also deploy in other DAWs. The documentation for building a VST 2.4 plugin turned out to be quite hard to find since this version is old and whatever I could find was not easy to follow and understand. There are a few higher level frameworks (like [Juce](https://juce.com/) or [wdl-old](https://github.com/olilarkin/wdl-ol)) that may be better to build a more complex application, but they have their own learning curves and hide (for better or for worse) how the underlying infrastructure actually work.
+
+For the same reason that I strongly believe every single developer should write their own compiler once, even if in the end you will end up using the standard ones (like gcc, clang, etc...), I believe it is important to understand how a VST plugin is built at its lowest level. This will give you a solid foundation and better understanding of the trade offs that higher level frameworks have to make.
+
+In the end, the core concepts of VST 2.4 are not very complicated. I only think they are a bit hard to understand due to the lack of documentation and simple examples.
+
+This project is meant to bridge this gap.
+ 
 
 VST 2.4
 =======
 
-Coming soon :)
+See [A Beginner's Guide to VST 2.4](./A_Beginners_Guide_To_VST2.4.md).
 
 Build
 =====
@@ -29,7 +36,7 @@ For the time being, simply open the XCode project (either with XCode itself or A
 Installation
 ============
 
-Copy the built bundle (`M3dB.vst` folder) under `$HOME/Audio/Plugin-Ins/VST` and use your favorite VST compliant favorite DAW to load.
+Copy the built bundle (`M3dB.vst` folder) under `$HOME/Library/Audio/Plugin-Ins/VST` and use your favorite VST compliant favorite DAW to load.
 
 License
 =======
