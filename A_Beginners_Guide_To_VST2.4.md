@@ -78,7 +78,9 @@ For example, `AEffect.dispatcher` is the main callback that the host will use to
 The callback `AEffect.processReplacing` (and `AEffect.processDoubleReplacing` for double precision) is the callback that the host will call repeatedly to process samples in single precision (respectively double precision). This is where the main processing of the plugin happens.
 
 #### More details
-The file [plugin.cpp](./plugin.cpp) serves as a basic example and explain the main concepts and interactions between the host and the plugin (for example how to get a hold of the plugin in the various callbacks, how to implement the `dispatcher` callback, etc...).
+The file [plugin.cpp](./M3dB/plugin.cpp) serves as a basic example and explain the main concepts and interactions between the host and the plugin (for example how to get a hold of the plugin in the various callbacks, how to implement the `dispatcher` callback, etc...).
 
 #### Packaging & Deployment
-The VST plugin build and packaging depends entirely on the platform. On the Mac, it needs to be a bundle. By convention, on the Mac, the host will look into several folders like `$HOME/Library/Audio/Plugin-Ins/VST` or `/Library/Audio/Plugin-Ins/VST` for VST 2.4 plugins.
+The VST plugin build and packaging depends entirely on the platform. On macOS, it needs to be a bundle. By convention, on macOS, the host will look into several folders like `$HOME/Library/Audio/Plugin-Ins/VST` or `/Library/Audio/Plugin-Ins/VST` for VST 2.4 plugins.
+
+See [README](./README.md) for more details on how to build/deploy this example (on macOS for the moment).

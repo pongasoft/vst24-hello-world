@@ -8,7 +8,7 @@ This plugin has no UI nor any way to configure it. It simply lowers the input si
 Motivations
 ===========
 
-TLDR; Lack of one
+TLDR; Lack of such project
 
 After building a few [Rack Extensions](https://pongasoft.com/) for Propellerhead's Reason DAW, I wanted to build a VST plugin which I could also deploy in other DAWs. The documentation for building a VST 2.4 plugin turned out to be quite hard to find since this version is old and whatever I could find was not easy to follow and understand. There are a few higher level frameworks (like [Juce](https://juce.com/) or [wdl-old](https://github.com/olilarkin/wdl-ol)) that may be better to build a more complex application, but they have their own learning curves and hide (for better or for worse) how the underlying infrastructure actually work.
 
