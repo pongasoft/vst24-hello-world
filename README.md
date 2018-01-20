@@ -40,7 +40,7 @@ Copy the built bundle (`M3dB.vst` folder) under `$HOME/Library/Audio/Plugin-Ins/
 
 Binary
 ======
-If you want to install this plugin without building it (on macOS only), [download](./releases/download/v1.0.0/M3dB.vst.zip) the file, unzip and copy `M3dB.vst` under `$HOME/Library/Audio/Plug-Ins/VST`
+If you want to install this plugin without building it (on macOS only), [download](https://github.com/pongasoft/vst24-hello-world/releases/download/v1.0.0/M3dB.vst.zip) the file, unzip and copy `M3dB.vst` under `$HOME/Library/Audio/Plug-Ins/VST`
 
 Integrity check `md5 M3dB.vst.zip => c4e81b73a7e848bc9f9362f14aff4983`.
 
